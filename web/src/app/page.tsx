@@ -2,7 +2,7 @@ import Image from "next/image";
 // import { Header } from "next/dist/lib/load-custom-routes";
 import Header from "./components/Header";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="h-screen w-screen">
       <Header />
