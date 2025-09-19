@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaCode, FaDatabase, FaServer } from 'react-icons/fa';
 import Image from 'next/image';
 import { HeroProps, TechStackItem } from '../../types';
-import settings from '@/app/settings/settings.json';
+import { SOCIAL_LINKS } from '@/app/config/settings';
 
 // Tech stack data
 const techStack: TechStackItem[] = [
@@ -53,7 +53,7 @@ const floatingVariants = {
 };
 
 const Hero: React.FC<HeroProps> = ({ className = '' }) => {
-    const { github, linkedin, email, city, country } = settings;
+    const { github, linkedin } = SOCIAL_LINKS;
 
     // Handle CTA button clicks
     const handleViewProjects = () => {
@@ -80,14 +80,14 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                         // variants={floatingVariants}
                         animate="animate"
                     />
-                    
+
                     <motion.div
                         className="absolute top-40 right-20 w-16 h-16 border border-[#68A063]/15 rotate-45"
                         // variants={floatingVariants}
                         animate="animate"
                         transition={{ delay: 1 }}
                     />
-                    
+
                     <motion.div
                         className="absolute bottom-40 left-20 w-12 h-12 border border-[#68A063]/15 rounded-full"
                         // variants={floatingVariants}
@@ -124,7 +124,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Profile Image */}
                     <motion.div
                         className="mb-8 flex justify-center"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         <div className="relative">
                             <motion.div
@@ -149,7 +149,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Main Headline */}
                     <motion.h1
                         className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         <span className="text-white underline decoration-[#68A063] decoration-4 underline-offset-8">
                             Full-Stack Developer
@@ -159,7 +159,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Subheadline */}
                     <motion.h2
                         className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6 font-medium"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         Building scalable web solutions with{' '}
                         <span className="text-white/80">React</span>,{' '}
@@ -170,7 +170,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Description */}
                     <motion.p
                         className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         Passionate about creating efficient, user-friendly applications that solve real-world problems.
                         I combine modern frontend technologies with robust backend solutions to deliver exceptional digital experiences.
@@ -179,7 +179,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Tech Stack Preview */}
                     <motion.div
                         className="mb-12"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
                             Tech Stack
@@ -195,8 +195,8 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                                     transition={{ delay: index * 0.1 + 1 }}
                                 >
                                     <span className={`${tech.category === 'frontend' ? 'text-white/80' :
-                                            tech.category === 'backend' ? 'text-[#68A063]' :
-                                                'text-white/80'
+                                        tech.category === 'backend' ? 'text-[#68A063]' :
+                                            'text-white/80'
                                         }`}>
                                         {tech.icon}
                                     </span>
@@ -209,7 +209,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Call-to-Action Buttons */}
                     <motion.div
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         {/* Primary CTA - View Projects */}
                         <motion.button
@@ -244,7 +244,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Social Links */}
                     <motion.div
                         className="mt-12 flex justify-center gap-6"
-                        // variants={itemVariants}
+                    // variants={itemVariants}
                     >
                         <motion.a
                             href={github}
