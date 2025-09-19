@@ -86,3 +86,9 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   ariaLabel?: string;
 }
+
+export interface SocialLinks {
+  github: string;
+  linkedin: string;
+  email: string;
+}
