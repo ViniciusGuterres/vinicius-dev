@@ -1,7 +1,5 @@
 import Header from "./components/Header";
 import Hero from "./components/sections/Hero";
-import settings from "./settings/settings.json";
-import { useEffect } from "react";
 
 export default function Page() {
 
