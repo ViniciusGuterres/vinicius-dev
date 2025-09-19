@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { settings } from '../settings/settings.json';
+import { SOCIAL_LINKS } from '../config/settings';
 
 export default function Header() {
-    const { github, linkedin, email } = settings;
+    const { github, linkedin, email } = SOCIAL_LINKS;
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
