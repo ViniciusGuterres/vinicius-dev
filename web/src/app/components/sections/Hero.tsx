@@ -64,6 +64,24 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
         }
     };
 
+    /**
+     * @summary Creates and triggers a download of the resume file.
+     * @desc Dynamically creates an anchor (`<a>`) element, sets its `href` to the resume file path,
+     *       and triggers a programmatic click to initiate the file download. The link element is
+     *       temporarily added to and then removed from the document body to work consistently across browsers.
+     * @returns {void}
+     */
+    const handleDownloadResume = () => {
+        const link = document.createElement('a');
+
+        link.href = '/vinicius_guterres_CV.pdf';
+        link.download = 'Vinicius_Guterres_Resume.pdf';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <section
             className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
@@ -233,11 +251,10 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             aria-label="Download my resume"
+                            onClick={handleDownloadResume}
                         >
                             <FaDownload className="w-5 h-5" />
-                            <a href='/vinicius_guterres_CV.pdf' target="_blank" rel="noopener noreferrer">
-                                Download Resume
-                            </a>
+                            Download Resume
                         </motion.button>
                     </motion.div>
 
