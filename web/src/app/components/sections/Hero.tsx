@@ -235,7 +235,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                             aria-label="Download my resume"
                         >
                             <FaDownload className="w-5 h-5" />
-                            <a href='/vinicius_Guterres_Resume.pdf' target="_blank" rel="noopener noreferrer">
+                            <a href='/vinicius_guterres_CV.pdf' target="_blank" rel="noopener noreferrer">
                                 Download Resume
                             </a>
                         </motion.button>
