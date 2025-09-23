@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { SectionProps, TechStackItem } from '../../types';
+import { SectionProps, TechStackItem as TechStackItemType } from '../../types';
 
 // Tech stack data with official icons and colors
-const techStack: TechStackItem[] = [
+const techStack: TechStackItemType[] = [
     // Frontend Technologies
     { icon: '⚛️', name: 'React', category: 'frontend' },
     { icon: '▲', name: 'Next.js', category: 'frontend' },
@@ -46,10 +46,6 @@ const itemVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: {
-            duration: 0.6,
-            ease: 'easeOut',
-        },
     },
 };
 
@@ -58,16 +54,12 @@ const techStackVariants = {
     visible: {
         opacity: 1,
         scale: 1,
-        transition: {
-            duration: 0.4,
-            ease: 'easeOut',
-        },
     },
 };
 
 // Tech Stack Item Component
 interface TechStackItemProps {
-    tech: TechStackItem;
+    tech: TechStackItemType;
     index: number;
 }
 
@@ -180,74 +172,13 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
             {/* Main content container */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    {/* Left Column - Pixel Art Image */}
-                    <motion.div
-                        className="flex justify-center lg:justify-start"
-                        variants={itemVariants}
-                    >
-                        <div className="relative">
-                            <motion.div
-                                className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[400px] lg:h-[600px] rounded-2xl overflow-hidden border-4 border-[#68A063]/30 shadow-2xl bg-gradient-to-br from-[#68A063]/10 to-transparent"
-                                whileHover={{
-                                    scale: 1.02,
-                                    boxShadow: '0 25px 50px rgba(104,160,99,0.3)'
-                                }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                {/* Placeholder for pixel art */}
-                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                                    <div className="text-center">
-                                        <Image
-                                            src="/profile_img_pixel_art.png"
-                                            alt="Vinicius Guterre - Full-Stack Developer"
-                                            width={400}
-                                            height={600}
-                                            className="w-full h-full object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Glowing ring effect */}
-                            <div className="absolute inset-0 rounded-2xl border-4 border-transparent bg-gradient-to-r from-[#68A063]/20 to-transparent opacity-30 animate-pulse" />
-
-                            {/* Floating accent elements */}
-                            <motion.div
-                                className="absolute -top-4 -right-4 w-8 h-8 bg-[#68A063]/20 rounded-full"
-                                animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.5, 0.8, 0.5],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: 'easeInOut',
-                                }}
-                            />
-                            <motion.div
-                                className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#68A063]/20 rounded-full"
-                                animate={{
-                                    scale: [1, 1.3, 1],
-                                    opacity: [0.3, 0.6, 0.3],
-                                }}
-                                transition={{
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: 'easeInOut',
-                                    delay: 1,
-                                }}
-                            />
-                        </div>
-                    </motion.div>
-
-                    {/* Right Column - About Content */}
+                    {/* Left Column - About Content */}
                     <motion.div
                         className="space-y-8"
                         variants={itemVariants}
@@ -335,6 +266,67 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                                 </div>
                             </motion.div>
                         </motion.div>
+                    </motion.div>
+
+                    {/* Right Column - Pixel Art Image */}
+                    <motion.div
+                        className="flex justify-center lg:justify-end"
+                        variants={itemVariants}
+                    >
+                        <div className="relative">
+                            <motion.div
+                                className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[400px] lg:h-[600px] rounded-2xl overflow-hidden border-4 border-[#68A063]/30 shadow-2xl bg-gradient-to-br from-[#68A063]/10 to-transparent"
+                                whileHover={{
+                                    scale: 1.02,
+                                    boxShadow: '0 25px 50px rgba(104,160,99,0.3)'
+                                }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {/* Placeholder for pixel art */}
+                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+                                    <div className="text-center">
+                                        <Image
+                                            src="/profile_img_pixel_art.png"
+                                            alt="Vinicius Guterre - Full-Stack Developer"
+                                            width={400}
+                                            height={600}
+                                            className="w-full h-full object-cover"
+                                            priority
+                                        />
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Glowing ring effect */}
+                            <div className="absolute inset-0 rounded-2xl border-4 border-transparent bg-gradient-to-r from-[#68A063]/20 to-transparent opacity-30 animate-pulse" />
+
+                            {/* Floating accent elements */}
+                            <motion.div
+                                className="absolute -top-4 -right-4 w-8 h-8 bg-[#68A063]/20 rounded-full"
+                                animate={{
+                                    scale: [1, 1.2, 1],
+                                    opacity: [0.5, 0.8, 0.5],
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: 'easeInOut',
+                                }}
+                            />
+                            <motion.div
+                                className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#68A063]/20 rounded-full"
+                                animate={{
+                                    scale: [1, 1.3, 1],
+                                    opacity: [0.3, 0.6, 0.3],
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: 'easeInOut',
+                                    delay: 1,
+                                }}
+                            />
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>
