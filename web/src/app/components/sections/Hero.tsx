@@ -95,27 +95,27 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Floating geometric shapes */}
                     <motion.div
                         className="absolute top-20 left-10 w-20 h-20 border border-[#68A063]/15 rounded-full"
-                        // variants={floatingVariants}
+                        variants={floatingVariants}
                         animate="animate"
                     />
 
                     <motion.div
                         className="absolute top-40 right-20 w-16 h-16 border border-[#68A063]/15 rotate-45"
-                        // variants={floatingVariants}
+                        variants={floatingVariants}
                         animate="animate"
                         transition={{ delay: 1 }}
                     />
 
                     <motion.div
                         className="absolute bottom-40 left-20 w-12 h-12 border border-[#68A063]/15 rounded-full"
-                        // variants={floatingVariants}
+                        variants={floatingVariants}
                         animate="animate"
                         transition={{ delay: 2 }}
                     />
 
                     <motion.div
                         className="absolute bottom-20 right-10 w-24 h-24 border border-[#68A063]/15 rotate-12"
-                        // variants={floatingVariants}
+                        variants={floatingVariants}
                         animate="animate"
                         transition={{ delay: 3 }}
                     />
@@ -135,14 +135,14 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <motion.div
                     className="text-center"
-                    // variants={containerVariants}
+                    variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
                     {/* Profile Image */}
                     <motion.div
                         className="mb-8 flex justify-center"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         <div className="relative">
                             <motion.div
@@ -167,17 +167,17 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Main Headline */}
                     <motion.h1
                         className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         <span className="text-white underline decoration-[#68A063] decoration-4 underline-offset-8">
-                            Full-Stack Developer
+                            Vinicius Guterres
                         </span>
                     </motion.h1>
 
                     {/* Subheadline */}
                     <motion.h2
                         className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6 font-medium"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         Building scalable web solutions with{' '}
                         <span className="text-white/80">React</span>,{' '}
@@ -188,7 +188,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Description */}
                     <motion.p
                         className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         Passionate about creating efficient, user-friendly applications that solve real-world problems.
                         I combine modern frontend technologies with robust backend solutions to deliver exceptional digital experiences.
@@ -197,7 +197,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Tech Stack Preview */}
                     <motion.div
                         className="mb-12"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
                             Tech Stack
@@ -227,7 +227,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Call-to-Action Buttons */}
                     <motion.div
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         {/* Primary CTA - View Projects */}
                         <motion.button
@@ -261,7 +261,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                     {/* Social Links */}
                     <motion.div
                         className="mt-12 flex justify-center gap-6"
-                    // variants={itemVariants}
+                        variants={itemVariants}
                     >
                         <motion.a
                             href={github}
