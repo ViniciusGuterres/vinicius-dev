@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaCode, FaDatabase, FaServer } from 'react-icons/fa';
 import Image from 'next/image';
-import { HeroProps, TechStackItem } from '../../types';
+import type { HeroProps, TechStackItem } from '../../types';
 import { SOCIAL_LINKS } from '@/app/config/settings';
 
 // Tech stack data
