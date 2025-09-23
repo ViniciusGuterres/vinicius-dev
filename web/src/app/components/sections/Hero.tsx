@@ -176,7 +176,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                         <span className="text-white/80">PostgreSQL</span>
                     </motion.h2>
 
-                    {/* Description */}
+                    {/* Descriptions */}
                     <motion.p
                         className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
                         variants={itemVariants}
