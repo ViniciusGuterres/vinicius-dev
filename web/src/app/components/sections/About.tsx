@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { SectionProps, TechStackItem as TechStackItemType } from '../../types';
+import type { SectionProps, TechStackItem as TechStackItemType } from '../../types';
 
 // Tech stack data with official icons and colors
 const techStack: TechStackItemType[] = [
