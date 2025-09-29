@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../config/settings';
+import LanguageToggle from './LanguageToggle';
 
 export default function Header() {
     const { github, linkedin, email } = SOCIAL_LINKS;
@@ -75,6 +76,8 @@ export default function Header() {
                     >
                         <FaEnvelope className="w-5 h-5" />
                     </a>
+
+                    <LanguageToggle />
                 </motion.div>
             </nav>
         </header>
