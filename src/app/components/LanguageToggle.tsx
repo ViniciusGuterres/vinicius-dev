@@ -7,79 +7,58 @@ export default function LanguageToggle() {
 
     if (isLoading) {
         return (
-            <div className="w-16 h-8 bg-white/10 rounded-full animate-pulse" />
+            <div className="flex items-center space-x-1">
+                <div className="w-8 h-6 bg-[#22F0B3]/20 rounded animate-pulse" />
+                <div className="w-8 h-6 bg-[#22F0B3]/20 rounded animate-pulse" />
+            </div>
         );
     }
 
     const isPortuguese = language === 'pt-br';
 
     return (
-        <button
-            onClick={() => setLanguage(isPortuguese ? 'en' : 'pt-br')}
-            className="group relative flex items-center w-16 h-8 bg-white/10 backdrop-blur-sm rounded-full transition-all duration-500 ease-out hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-purple-400/50"
-            aria-label={`Switch to ${isPortuguese ? 'English' : 'Português'}`}
-        >
-            {/* Active indicator */}
-            <div
-                className={`absolute w-6 h-6 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full shadow-lg transform transition-all duration-500 ease-out flex items-center justify-center ${isPortuguese ? 'translate-x-9' : 'translate-x-1'
-                    }`}
+        <div className="flex items-center space-x-1 p-1 bg-[#1F1F21]/50 backdrop-blur-sm rounded-lg border border-[#22F0B3]/20">
+            {/* Brazil Flag Button */}
+            <button
+                onClick={() => setLanguage('pt-br')}
+                className={`relative flex items-center justify-center w-8 h-6 rounded transition-all duration-500 ease-out group ${
+                    isPortuguese 
+                        ? 'border border-[#22F0B3]/60 bg-[#22F0B3]/5' 
+                        : 'border border-transparent bg-transparent hover:bg-[#22F0B3]/5 hover:border-[#22F0B3]/30'
+                }`}
+                aria-label="Switch to Portuguese"
             >
-                {/* Flag icon inside the indicator */}
-                <div className="w-3 h-3 rounded-full overflow-hidden">
-                    {isPortuguese ? (
-                        <Image
-                            src="/brazil_flag.svg"
-                            alt="Brazil flag"
-                            width={12}
-                            height={12}
-                            className="w-full h-full object-cover"
-                        />
-                    ) : (
-                        <Image
-                            src="/eua_flag.svg"
-                            alt="USA flag"
-                            width={12}
-                            height={12}
-                            className="w-full h-full object-cover"
-                        />
-                    )}
-                </div>
-            </div>
-
-            {/* Flag indicators */}
-            <div className="relative flex items-center justify-between w-full px-2">
-                {/* USA Flag */}
-                <div
-                    className={`w-4 h-3 rounded-sm overflow-hidden transition-all duration-500 ${!isPortuguese
-                            ? 'opacity-100 scale-110'
-                            : 'opacity-40 scale-100'
-                        }`}
-                >
-                    <Image
-                        src="/eua_flag.svg"
-                        alt="USA flag"
-                        width={16}
-                        height={12}
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-
-                {/* Brazil Flag */}
-                <div
-                    className={`w-4 h-3 rounded-sm overflow-hidden transition-all duration-500 ${isPortuguese
-                            ? 'opacity-100 scale-110'
-                            : 'opacity-40 scale-100'
-                        }`}
-                >
+                <div className="w-6 h-4 rounded-sm overflow-hidden">
                     <Image
                         src="/brazil_flag.svg"
                         alt="Brazil flag"
-                        width={16}
-                        height={12}
-                        className="w-full h-full object-cover"
+                        width={24}
+                        height={16}
+                        className="w-full h-full object-cover transition-all duration-500"
                     />
                 </div>
-            </div>
-        </button>
+            </button>
+
+            {/* USA Flag Button */}
+            <button
+                onClick={() => setLanguage('en')}
+                className={`relative flex items-center justify-center w-8 h-6 rounded transition-all duration-500 ease-out group ${
+                    !isPortuguese 
+                        ? 'border border-[#22F0B3]/60 bg-[#22F0B3]/5' 
+                        : 'border border-transparent bg-transparent hover:bg-[#22F0B3]/5 hover:border-[#22F0B3]/30'
+                }`}
+                aria-label="Switch to English"
+            >
+                <div className="w-6 h-4 rounded-sm overflow-hidden">
+                    <Image
+                        src="/eua_flag.svg"
+                        alt="USA flag"
+                        width={24}
+                        height={16}
+                        className="w-full h-full object-cover transition-all duration-500"
+                    />
+                </div>
+            </button>
+        </div>
     );
 }
