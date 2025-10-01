@@ -53,7 +53,7 @@ export const dictionary = {
             title: 'Sobre Mim',
             description: [
                 "Sou um desenvolvedor full-stack focado, com mais de 4 anos de experiência na construção de aplicações web escaláveis que resolvem problemas do mundo real. Minha jornada no desenvolvimento de software começou com um fascínio por transformar ideias complexas em soluções elegantes e amigáveis ao usuário.",
-                "O que mais me move é o desafio de criar **experiências de usuário fluidas** (seamless) enquanto mantenho um código robusto e eficiente. Acredito no poder da arquitetura limpa e do aprendizado contínuo, mantendo-me sempre atualizado com as últimas tecnologias e melhores práticas do setor.",
+                "O que mais me move é o desafio de criar experiências de usuário fluidas (seamless) enquanto mantenho um código robusto e eficiente. Acredito no poder da arquitetura limpa e do aprendizado contínuo, mantendo-me sempre atualizado com as últimas tecnologias e melhores práticas do setor.",
             ],
             techStackTitle: 'Tecnologias que eu trabalho',
         },
