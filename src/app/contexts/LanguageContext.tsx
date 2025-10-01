@@ -7,7 +7,7 @@ import { dictionary } from "../lib/dictionary";
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (path: string) => string | string[];
+    translate: (path: string) => string | string[];
     isLoading: boolean;
 };
 
@@ -36,7 +36,7 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
 
 
 
-    const t = (path: string): string | string[] => {
+    const translate = (path: string): string | string[] => {
         const keys = path.split('.');
         let currentDictionary: any = dictionary[language];
 
@@ -54,7 +54,7 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
 
     return (
         <LanguageContext.Provider
-            value={{ language, setLanguage, t, isLoading }}
+            value={{ language, setLanguage, translate, isLoading }}
         >
             {children}
         </LanguageContext.Provider>
