@@ -6,28 +6,46 @@ import Image from 'next/image';
 import type { SectionProps, TechStackItem as TechStackItemType } from '../../types';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
+import {
+    SiReact,
+    SiNextdotjs,
+    SiTypescript,
+    SiTailwindcss,
+    SiNodedotjs,
+    SiExpress,
+    SiPostgresql,
+    SiMongodb,
+    SiRedis,
+    SiMysql,
+    SiAmazon, 
+    SiGit,
+    SiLinux,
+    SiNestjs
+} from 'react-icons/si';
+
 // Tech stack data with official icons and colors
 const techStack: TechStackItemType[] = [
-    // Frontend Technologies
-    { icon: '⚛️', name: 'React', category: 'frontend' },
-    { icon: '▲', name: 'Next.js', category: 'frontend' },
-    { icon: '📘', name: 'TypeScript', category: 'frontend' },
-    { icon: '🎨', name: 'Tailwind CSS', category: 'frontend' },
+    // Frontend
+    { icon: <SiReact size={24} />, name: 'React', category: 'frontend' },
+    { icon: <SiNextdotjs size={24} />, name: 'Next.js', category: 'frontend' },
+    { icon: <SiTypescript size={24} />, name: 'TypeScript', category: 'frontend' },
+    { icon: <SiTailwindcss size={24} />, name: 'Tailwind CSS', category: 'frontend' },
 
-    // Backend Technologies
-    { icon: '🟢', name: 'Node.js', category: 'backend' },
-    { icon: '⚡', name: 'Express.js', category: 'backend' },
+    // Backend
+    { icon: <SiNodedotjs size={24} />, name: 'Node.js', category: 'backend' },
+    { icon: <SiExpress size={24} />, name: 'Express.js', category: 'backend' },
+    { icon: <SiNestjs size={24} />, name: 'Nest.js', category: 'backend' },
 
     // Databases
-    { icon: '🐘', name: 'PostgreSQL', category: 'database' },
-    { icon: '🍃', name: 'MongoDB', category: 'database' },
-    { icon: '🔴', name: 'Redis', category: 'database' },
-    { icon: '🐬', name: 'MySQL', category: 'database' },
+    { icon: <SiPostgresql size={24} />, name: 'PostgreSQL', category: 'database' },
+    { icon: <SiMongodb size={24} />, name: 'MongoDB', category: 'database' },
+    { icon: <SiRedis size={24} />, name: 'Redis', category: 'database' },
+    { icon: <SiMysql size={24} />, name: 'MySQL', category: 'database' },
 
     // Tools & Others
-    { icon: '☁️', name: 'AWS', category: 'tools' },
-    { icon: '📝', name: 'Git', category: 'tools' },
-    { icon: '🐧', name: 'Linux', category: 'tools' },
+    { icon: <SiAmazon size={24} />, name: 'AWS', category: 'tools' },
+    { icon: <SiGit size={24} />, name: 'Git', category: 'tools' },
+    { icon: <SiLinux size={24} />, name: 'Linux', category: 'tools' },
 ];
 
 // Animation variants
@@ -206,7 +224,7 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                             {
                                 Array.isArray(aboutDescription)
                                     ? aboutDescription.map((item: string, i: number) => <p key={i}>{item}</p>)
-                                    :null
+                                    : null
                             }
                         </motion.div>
 
@@ -275,14 +293,14 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                                 {/* Placeholder for pixel art */}
                                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
                                     <div className="text-center">
-                                        <Image
+                                        {/* <Image
                                             src="/profile_img_pixel_art.png"
                                             alt="Vinicius Guterre - Full-Stack Developer"
                                             width={400}
                                             height={600}
                                             className="w-full h-full object-cover"
                                             priority
-                                        />
+                                        /> */}
                                     </div>
                                 </div>
                             </motion.div>
