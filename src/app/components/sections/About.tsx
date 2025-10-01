@@ -293,14 +293,14 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                                 {/* Placeholder for pixel art */}
                                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
                                     <div className="text-center">
-                                        {/* <Image
+                                        <Image
                                             src="/profile_img_pixel_art.png"
                                             alt="Vinicius Guterre - Full-Stack Developer"
                                             width={400}
                                             height={600}
                                             className="w-full h-full object-cover"
                                             priority
-                                        /> */}
+                                        /> 
                                     </div>
                                 </div>
                             </motion.div>
