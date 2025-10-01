@@ -24,7 +24,7 @@ export default function Header() {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                        Vinicius
+                        Vinícius
                     </span>
                 </motion.div>
 
