@@ -18,7 +18,7 @@ interface LanguageProviderProps {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const DEFAULT_LANGUAGE = 'en';
+const DEFAULT_LANGUAGE = 'en-us';
 
 export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE }: LanguageProviderProps) {
     const [language, setLanguage] = useState<Language>(initialLanguage);
@@ -34,7 +34,7 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
         setIsLoading(false);
     }, []);
 
-    
+
 
     const t = (path: string): string | string[] => {
         const keys = path.split('.');

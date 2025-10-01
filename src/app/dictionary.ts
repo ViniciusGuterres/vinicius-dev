@@ -1,5 +1,5 @@
 export const translations = {
-    en: {
+    'en-us': {
         header: {
             home: 'Home',
             about: 'About',

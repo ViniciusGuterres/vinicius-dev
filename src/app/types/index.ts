@@ -93,7 +93,7 @@ export interface SocialLinks {
   email: string;
 }
 
-export type Language = 'en' | 'pt-br';
+export type Language = 'en-us' | 'pt-br';
 export interface Translations {
     [key: string]: string | Translations;
 }

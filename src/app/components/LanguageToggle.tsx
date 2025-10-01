@@ -26,8 +26,8 @@ export default function LanguageToggle() {
             {/* USA Flag Button */}
             <button
                 onClick={() => {
-                    setLanguage('en');
-                    setLanguageLocalStorage('en');
+                    setLanguage('en-us');
+                    setLanguageLocalStorage('en-us');
                 }}
                 className={`relative flex items-center justify-center w-8 h-6 rounded transition-all duration-500 ease-out group ${
                     !isPortuguese 

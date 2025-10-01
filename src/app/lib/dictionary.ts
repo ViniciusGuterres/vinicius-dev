@@ -1,5 +1,5 @@
 export const dictionary = {
-    'en': {
+    'en-us': {
         header: {
             home: 'Home',
             about: 'About',
