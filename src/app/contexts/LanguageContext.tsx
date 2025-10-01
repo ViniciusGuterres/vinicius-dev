@@ -22,12 +22,19 @@ const DEFAULT_LANGUAGE = 'en';
 
 export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE }: LanguageProviderProps) {
     const [language, setLanguage] = useState<Language>(initialLanguage);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Get language from cookies
+        const userLanguageLocalStorage = localStorage.getItem('language');
         
+        if (userLanguageLocalStorage) {
+            setLanguage(userLanguageLocalStorage as Language);
+        }
+
+        setIsLoading(false);
     }, []);
+
+    
 
     const t = (path: string): string | string[] => {
         const keys = path.split('.');
