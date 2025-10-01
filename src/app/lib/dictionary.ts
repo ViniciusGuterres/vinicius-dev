@@ -8,7 +8,7 @@ export const dictionary = {
         },
         hero: {
             title: 'Full-Stack Developer',
-            subtitle: 'Building scalable web solutions with React, Node.js, and PostgreSQL',
+            subtitle: 'Building scalable web solutions with',
             description: 'Passionate about creating efficient, user-friendly applications that solve real-world problems.',
             viewProjects: 'View My Projects',
             downloadResume: 'Download Resume'
@@ -16,10 +16,10 @@ export const dictionary = {
         about: {
             title: 'About Me',
             description: [
-                'I\'m a passionate full-stack developer with expertise in modern web technologies.',
-                'I love solving complex problems and creating seamless user experiences.',
-                'Always eager to learn new technologies and improve my craft.'
-            ]
+                "I'm a passionate full-stack developer with over 4+ years of experience building scalable web applications that solve real-world problems. My journey in software development began with a fascination for turning complex ideas into elegant, user-friendly solutions.",
+                "What drives me most is the challenge of creating seamless user experiences while maintaining robust, efficient code. I believe in the power of clean architecture and continuous learning, always staying up-to-date with the latest technologies and best practices in the industry.",
+            ],
+            techStackTitle: 'Technologies I Work With',
         },
         projects: {
             title: 'My Projects',
@@ -37,25 +37,25 @@ export const dictionary = {
     },
     'pt-br': {
         header: {
-            home: 'Home',
+            home: 'Início',
             about: 'Sobre',
             projects: 'Projetos',
             contact: 'Contato'
         },
         hero: {
             title: 'Desenvolvedor Full-Stack',
-            subtitle: 'Construindo soluções web escaláveis com React, Node.js e PostgreSQL',
+            subtitle: 'Construindo soluções web escaláveis com',
             description: 'Apaixonado por criar aplicações eficientes e user-friendly que resolvem problemas reais.',
-            viewProjects: 'Ver Meus Projetos',
+            viewProjects: 'Meus Projetos',
             downloadResume: 'Baixar Currículo'
         },
         about: {
             title: 'Sobre Mim',
             description: [
-                'Sou um desenvolvedor full-stack apaixonado com expertise em tecnologias web modernas.',
-                'Adoro resolver problemas complexos e criar experiências de usuário perfeitas.',
-                'Sempre disposto a aprender novas tecnologias e melhorar minhas habilidades.'
-            ]
+                "Sou um desenvolvedor full-stack focado, com mais de 4 anos de experiência na construção de aplicações web escaláveis que resolvem problemas do mundo real. Minha jornada no desenvolvimento de software começou com um fascínio por transformar ideias complexas em soluções elegantes e amigáveis ao usuário.",
+                "O que mais me move é o desafio de criar **experiências de usuário fluidas** (seamless) enquanto mantenho um código robusto e eficiente. Acredito no poder da arquitetura limpa e do aprendizado contínuo, mantendo-me sempre atualizado com as últimas tecnologias e melhores práticas do setor.",
+            ],
+            techStackTitle: 'Tecnologias que eu trabalho',
         },
         projects: {
             title: 'Meus Projetos',
