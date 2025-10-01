@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin, FaDownload, FaCode, FaDatabase, FaServer } from '
 import Image from 'next/image';
 import type { HeroProps, TechStackItem } from '../../types';
 import { SOCIAL_LINKS } from '@/app/config/settings';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 // Tech stack data
 const techStack: TechStackItem[] = [
@@ -54,6 +55,7 @@ const floatingVariants = {
 
 const Hero: React.FC<HeroProps> = ({ className = '' }) => {
     const { github, linkedin } = SOCIAL_LINKS;
+    const { translate } = useLanguage();
 
     // Handle CTA button clicks
     const handleViewProjects = () => {
@@ -75,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
         const link = document.createElement('a');
 
         link.href = '/vinicius_guterres_CV.pdf';
-        link.download = 'Vinicius_Guterres_Resume.pdf';
+        link.download = 'vinicius_guterres_resume.pdf';
 
         document.body.appendChild(link);
         link.click();
@@ -170,7 +172,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                         className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6 font-medium"
                         variants={itemVariants}
                     >
-                        Building scalable web solutions with{' '}
+                        {translate('hero.subtitle')}{' '}
                         <span className="text-white/80">React</span>,{' '}
                         <span className="text-[#68A063]">Node.js</span>, and{' '}
                         <span className="text-white/80">PostgreSQL</span>
@@ -181,8 +183,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                         className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
                         variants={itemVariants}
                     >
-                        Passionate about creating efficient, user-friendly applications that solve real-world problems.
-                        I combine modern frontend technologies with robust backend solutions to deliver exceptional digital experiences.
+                        {translate('hero.description')}
                     </motion.p>
 
                     {/* Tech Stack Preview */}
@@ -230,7 +231,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 <FaGithub className="w-5 h-5" />
-                                View My Projects
+                                {translate('hero.viewProjects')}
                             </span>
                             {/* Hover effect background */}
                             <div className="absolute inset-0 bg-[#68A063] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
@@ -245,7 +246,7 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
                             onClick={handleDownloadResume}
                         >
                             <FaDownload className="w-5 h-5" />
-                            Download Resume
+                            {translate('hero.downloadResume')}
                         </motion.button>
                     </motion.div>
 
