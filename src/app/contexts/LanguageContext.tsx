@@ -7,6 +7,7 @@ import { dictionary } from "../lib/dictionary";
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
+    setLanguageState: (newLanguage: Language) => void;
     translate: (path: string) => string | string[];
     isLoading: boolean;
 };
@@ -19,13 +20,14 @@ interface LanguageProviderProps {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const DEFAULT_LANGUAGE = 'en-us';
+const LANGUAGE_LOCAL_STORAGE_KEY = 'language';
 
 export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE }: LanguageProviderProps) {
     const [language, setLanguage] = useState<Language>(initialLanguage);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const userLanguageLocalStorage = localStorage.getItem('language');
+        const userLanguageLocalStorage = localStorage.getItem(LANGUAGE_LOCAL_STORAGE_KEY);
         
         if (userLanguageLocalStorage) {
             setLanguage(userLanguageLocalStorage as Language);
@@ -33,8 +35,6 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
 
         setIsLoading(false);
     }, []);
-
-
 
     const translate = (path: string): string | string[] => {
         const keys = path.split('.');
@@ -52,9 +52,19 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
         return currentDictionary;
     }
 
+    const setLanguageState = (newLanguage: Language) => {
+        setIsLoading(true);
+        setLanguage(newLanguage);
+
+        // Update the new language in the local storage
+        localStorage.setItem(LANGUAGE_LOCAL_STORAGE_KEY, language);
+
+        setIsLoading(false); 
+    }
+
     return (
         <LanguageContext.Provider
-            value={{ language, setLanguage, translate, isLoading }}
+            value={{ language, setLanguage, translate, isLoading, setLanguageState }}
         >
             {children}
         </LanguageContext.Provider>
