@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../config/settings';
 import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Header() {
     const { github, linkedin, email } = SOCIAL_LINKS;
+    const { translate } = useLanguage();
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -33,14 +35,24 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
+                    {/* home  */}
+                    <a href="#home" className="text-gray-300 hover:text-white transition-colors duration-300">
+                        {translate('header.home')}
+                    </a>
+
+                    {/*  about */}
                     <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">
-                        About
+                        {translate('header.about')}
                     </a>
+
+                    {/* projects */}
                     <a href="#projects" className="text-gray-300 hover:text-white transition-colors duration-300">
-                        Projects
-                    </a>
+                        {translate('header.projects')}
+                    </a>    
+
+                    {/* contact */}
                     <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300">
-                        Contact
+                        {translate('header.contact')}
                     </a>
                 </motion.div>
 
