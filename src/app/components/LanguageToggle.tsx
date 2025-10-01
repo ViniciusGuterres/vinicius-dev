@@ -4,11 +4,7 @@ import Image from 'next/image';
 import { Language } from '../types';
 
 export default function LanguageToggle() {
-    const { language, setLanguage, isLoading } = useLanguage();
-
-    const setLanguageLocalStorage = (language: Language) => {
-        localStorage.setItem('language', language);
-    }
+    const { language, setLanguageState, isLoading } = useLanguage();
 
     if (isLoading) {
         return (
@@ -25,10 +21,7 @@ export default function LanguageToggle() {
         <div className="flex items-center space-x-1 p-1 bg-[#1F1F21]/50 backdrop-blur-sm rounded-lg border border-[#22F0B3]/20">
             {/* USA Flag Button */}
             <button
-                onClick={() => {
-                    setLanguage('en-us');
-                    setLanguageLocalStorage('en-us');
-                }}
+                onClick={() => setLanguageState('en-us')}
                 className={`relative flex items-center justify-center w-8 h-6 rounded transition-all duration-500 ease-out group ${
                     !isPortuguese 
                         ? 'border border-[#22F0B3]/60 bg-[#22F0B3]/5' 
@@ -49,10 +42,7 @@ export default function LanguageToggle() {
             
             {/* Brazil Flag Button */}
             <button
-                onClick={() => {
-                    setLanguage('pt-br');
-                    setLanguageLocalStorage('pt-br');
-                }}
+                onClick={() => setLanguageState('pt-br')}
                 className={`relative flex items-center justify-center w-8 h-6 rounded transition-all duration-500 ease-out group ${
                     isPortuguese 
                         ? 'border border-[#22F0B3]/60 bg-[#22F0B3]/5' 
