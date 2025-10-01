@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { SectionProps, TechStackItem as TechStackItemType } from '../../types';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 // Tech stack data with official icons and colors
 const techStack: TechStackItemType[] = [
@@ -114,6 +115,10 @@ const TechStackItem: React.FC<TechStackItemProps> = ({ tech, index }) => {
 };
 
 const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
+    const { translate } = useLanguage();
+
+    const aboutDescription = translate('about.description');
+
     return (
         <section
             id={id}
@@ -189,35 +194,20 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                             variants={itemVariants}
                         >
                             <span className="text-white underline decoration-[#68A063] decoration-4 underline-offset-8">
-                                About Me
+                                {translate('about.title')}
                             </span>
                         </motion.h2>
 
-                        {/* About Text */}
+                        {/* About Description */}
                         <motion.div
                             className="space-y-6 text-lg text-gray-300 leading-relaxed"
                             variants={itemVariants}
                         >
-                            <p>
-                                I'm a passionate full-stack developer with over 4+ years of experience building
-                                scalable web applications that solve real-world problems. My journey in software
-                                development began with a fascination for turning complex ideas into elegant,
-                                user-friendly solutions.
-                            </p>
-
-                            <p>
-                                What drives me most is the challenge of creating seamless user experiences while
-                                maintaining robust, efficient code. I believe in the power of clean architecture
-                                and continuous learning, always staying up-to-date with the latest technologies
-                                and best practices in the industry.
-                            </p>
-
-                            <p>
-                                When I'm not coding, you'll find me collaborating with teams, mentoring junior
-                                developers, or exploring new frameworks. I'm passionate about open-source
-                                contributions and believe in the importance of giving back to the developer
-                                community that has shaped my career.
-                            </p>
+                            {
+                                Array.isArray(aboutDescription)
+                                    ? aboutDescription.map((item: string, i: number) => <p key={i}>{item}</p>)
+                                    :null
+                            }
                         </motion.div>
 
                         {/* Tech Stack Section */}
@@ -226,7 +216,7 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                             variants={itemVariants}
                         >
                             <h3 className="text-2xl font-semibold text-white">
-                                Technologies I Work With
+                                {translate('about.techStackTitle')}
                             </h3>
 
                             {/* Tech Stack Grid */}
