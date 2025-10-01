@@ -8,7 +8,7 @@ export const translations = {
         },
         hero: {
             title: 'Full-Stack Developer',
-            subtitle: 'Building scalable web solutions with React, Node.js, and PostgreSQL',
+            subtitle: 'Building scalable web solutions with',
             description: 'Passionate about creating efficient, user-friendly applications that solve real-world problems.',
             viewProjects: 'View My Projects',
             downloadResume: 'Download Resume'
@@ -44,9 +44,9 @@ export const translations = {
         },
         hero: {
             title: 'Desenvolvedor Full-Stack',
-            subtitle: 'Construindo soluções web escaláveis com React, Node.js e PostgreSQL',
+            subtitle: 'Construindo soluções web escaláveis com',
             description: 'Apaixonado por criar aplicações eficientes e user-friendly que resolvem problemas reais.',
-            viewProjects: 'Ver Meus Projetos',
+            viewProjects: 'Meus Projetos',
             downloadResume: 'Baixar Currículo'
         },
         about: {
