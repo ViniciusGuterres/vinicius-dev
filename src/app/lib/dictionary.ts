@@ -37,7 +37,7 @@ export const dictionary = {
     },
     'pt-br': {
         header: {
-            home: 'Início',
+            home: 'Home',
             about: 'Sobre',
             projects: 'Projetos',
             contact: 'Contato'
