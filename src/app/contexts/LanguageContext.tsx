@@ -57,7 +57,7 @@ export function LanguageProvider({ children, initialLanguage = DEFAULT_LANGUAGE 
         setLanguage(newLanguage);
 
         // Update the new language in the local storage
-        localStorage.setItem(LANGUAGE_LOCAL_STORAGE_KEY, language);
+        localStorage.setItem(LANGUAGE_LOCAL_STORAGE_KEY, newLanguage);
 
         setIsLoading(false); 
     }
