@@ -20,7 +20,8 @@ import {
     SiAmazon, 
     SiGit,
     SiLinux,
-    SiNestjs
+    SiNestjs,
+    SiJest
 } from 'react-icons/si';
 
 // Tech stack data with official icons and colors
@@ -43,6 +44,7 @@ const techStack: TechStackItemType[] = [
     { icon: <SiMysql size={24} />, name: 'MySQL', category: 'database' },
 
     // Tools & Others
+    { icon: <SiJest size={24} />, name: 'Jest', category: 'tools' },
     { icon: <SiAmazon size={24} />, name: 'AWS', category: 'tools' },
     { icon: <SiGit size={24} />, name: 'Git', category: 'tools' },
     { icon: <SiLinux size={24} />, name: 'Linux', category: 'tools' },
