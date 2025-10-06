@@ -92,3 +92,8 @@ export interface SocialLinks {
   linkedin: string;
   email: string;
 }
+
+export type Language = 'en-us' | 'pt-br';
+export interface Translations {
+    [key: string]: string | Translations;
+}

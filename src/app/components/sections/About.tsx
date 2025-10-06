@@ -4,29 +4,50 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { SectionProps, TechStackItem as TechStackItemType } from '../../types';
+import { useLanguage } from '@/app/contexts/LanguageContext';
+
+import {
+    SiReact,
+    SiNextdotjs,
+    SiTypescript,
+    SiTailwindcss,
+    SiNodedotjs,
+    SiExpress,
+    SiPostgresql,
+    SiMongodb,
+    SiRedis,
+    SiMysql,
+    SiAmazon, 
+    SiGit,
+    SiLinux,
+    SiNestjs,
+    SiJest
+} from 'react-icons/si';
 
 // Tech stack data with official icons and colors
 const techStack: TechStackItemType[] = [
-    // Frontend Technologies
-    { icon: '⚛️', name: 'React', category: 'frontend' },
-    { icon: '▲', name: 'Next.js', category: 'frontend' },
-    { icon: '📘', name: 'TypeScript', category: 'frontend' },
-    { icon: '🎨', name: 'Tailwind CSS', category: 'frontend' },
+    // Frontend
+    { icon: <SiReact size={24} />, name: 'React', category: 'frontend' },
+    { icon: <SiNextdotjs size={24} />, name: 'Next.js', category: 'frontend' },
+    { icon: <SiTypescript size={24} />, name: 'TypeScript', category: 'frontend' },
+    { icon: <SiTailwindcss size={24} />, name: 'Tailwind CSS', category: 'frontend' },
 
-    // Backend Technologies
-    { icon: '🟢', name: 'Node.js', category: 'backend' },
-    { icon: '⚡', name: 'Express.js', category: 'backend' },
+    // Backend
+    { icon: <SiNodedotjs size={24} />, name: 'Node.js', category: 'backend' },
+    { icon: <SiExpress size={24} />, name: 'Express.js', category: 'backend' },
+    { icon: <SiNestjs size={24} />, name: 'Nest.js', category: 'backend' },
 
     // Databases
-    { icon: '🐘', name: 'PostgreSQL', category: 'database' },
-    { icon: '🍃', name: 'MongoDB', category: 'database' },
-    { icon: '🔴', name: 'Redis', category: 'database' },
-    { icon: '🐬', name: 'MySQL', category: 'database' },
+    { icon: <SiPostgresql size={24} />, name: 'PostgreSQL', category: 'database' },
+    { icon: <SiMongodb size={24} />, name: 'MongoDB', category: 'database' },
+    { icon: <SiRedis size={24} />, name: 'Redis', category: 'database' },
+    { icon: <SiMysql size={24} />, name: 'MySQL', category: 'database' },
 
     // Tools & Others
-    { icon: '☁️', name: 'AWS', category: 'tools' },
-    { icon: '📝', name: 'Git', category: 'tools' },
-    { icon: '🐧', name: 'Linux', category: 'tools' },
+    { icon: <SiJest size={24} />, name: 'Jest', category: 'tools' },
+    { icon: <SiAmazon size={24} />, name: 'AWS', category: 'tools' },
+    { icon: <SiGit size={24} />, name: 'Git', category: 'tools' },
+    { icon: <SiLinux size={24} />, name: 'Linux', category: 'tools' },
 ];
 
 // Animation variants
@@ -114,6 +135,10 @@ const TechStackItem: React.FC<TechStackItemProps> = ({ tech, index }) => {
 };
 
 const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
+    const { translate } = useLanguage();
+
+    const aboutDescription = translate('about.description');
+
     return (
         <section
             id={id}
@@ -189,35 +214,20 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                             variants={itemVariants}
                         >
                             <span className="text-white underline decoration-[#68A063] decoration-4 underline-offset-8">
-                                About Me
+                                {translate('about.title')}
                             </span>
                         </motion.h2>
 
-                        {/* About Text */}
+                        {/* About Description */}
                         <motion.div
                             className="space-y-6 text-lg text-gray-300 leading-relaxed"
                             variants={itemVariants}
                         >
-                            <p>
-                                I'm a passionate full-stack developer with over 4+ years of experience building
-                                scalable web applications that solve real-world problems. My journey in software
-                                development began with a fascination for turning complex ideas into elegant,
-                                user-friendly solutions.
-                            </p>
-
-                            <p>
-                                What drives me most is the challenge of creating seamless user experiences while
-                                maintaining robust, efficient code. I believe in the power of clean architecture
-                                and continuous learning, always staying up-to-date with the latest technologies
-                                and best practices in the industry.
-                            </p>
-
-                            <p>
-                                When I'm not coding, you'll find me collaborating with teams, mentoring junior
-                                developers, or exploring new frameworks. I'm passionate about open-source
-                                contributions and believe in the importance of giving back to the developer
-                                community that has shaped my career.
-                            </p>
+                            {
+                                Array.isArray(aboutDescription)
+                                    ? aboutDescription.map((item: string, i: number) => <p key={i}>{item}</p>)
+                                    : null
+                            }
                         </motion.div>
 
                         {/* Tech Stack Section */}
@@ -226,7 +236,7 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                             variants={itemVariants}
                         >
                             <h3 className="text-2xl font-semibold text-white">
-                                Technologies I Work With
+                                {translate('about.techStackTitle')}
                             </h3>
 
                             {/* Tech Stack Grid */}
@@ -292,7 +302,7 @@ const About: React.FC<SectionProps> = ({ className = '', id = 'about' }) => {
                                             height={600}
                                             className="w-full h-full object-cover"
                                             priority
-                                        />
+                                        /> 
                                     </div>
                                 </div>
                             </motion.div>
