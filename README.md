@@ -2,13 +2,12 @@
 
 > A modern, bilingual full-stack developer portfolio showcasing projects and skills with cutting-edge web technologies.
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/vinicius-dev/portfolio)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.11-black.svg)](https://nextjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC.svg)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000.svg)](https://vercel.com/)
 
-[🌐 **Website**](https://vinicius-dev-umber.vercel.app/) | [📖 **Documentation**](#-getting-started) | [🐛 **Report Bug**](https://github.com/vinicius-dev/portfolio/issues)
+[🌐 **Live Website**](https://vinicius-dev-umber.vercel.app/) | [💼 **LinkedIn**](https://linkedin.com/in/vinicius-guterres) | [🐙 **GitHub**](https://github.com/vinicius-dev)
 
 ---
 
@@ -80,119 +79,69 @@ This is a modern, professional portfolio website built to showcase my expertise 
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Technical Architecture
 
-### App Router Pattern
-This project leverages Next.js 14's App Router for modern React development:
-- **File-based routing** with `app/` directory structure
-- **Server Components** by default for optimal performance
-- **Client Components** with `'use client'` directive when needed
-- **Layout nesting** for consistent UI across pages
+### Modern React Architecture
+This portfolio showcases cutting-edge web development practices:
 
-### Component Architecture
-Following atomic design principles with a component-driven approach:
-```
-src/app/components/
-├── sections/          # Page sections (Hero, About, Projects)
-├── __tests__/         # Component test files
-├── Header.tsx         # Navigation component
-└── LanguageToggle.tsx # Language switcher
-```
+**Next.js 14 App Router:**
+- **File-based routing** for intuitive navigation structure
+- **Server Components** for optimal performance and SEO
+- **Client Components** for interactive features
+- **Layout nesting** for consistent user experience
 
-### State Management
-- **Context API** for global language state management
-- **Local Storage** for persistent language preferences
-- **React Hooks** for component-level state
+**Component Design:**
+- **Atomic design principles** with reusable components
+- **TypeScript integration** for type safety
+- **Responsive-first approach** with Tailwind CSS
+- **Accessibility-focused** implementation
 
-### Data Flow
-```
-User Interaction → Context Provider → Component State → UI Update
-     ↓
-Local Storage ← Language Preference ← Context Update
-```
+**State Management:**
+- **React Context** for global language state
+- **Local Storage** for persistent user preferences
+- **Modern hooks** for component-level state
 
-### Key Directories
-```
-src/
-├── app/
-│   ├── components/     # Reusable UI components
-│   ├── contexts/       # React Context providers
-│   ├── lib/           # Utility functions and data
-│   ├── types/         # TypeScript type definitions
-│   └── config/        # Application configuration
-├── public/            # Static assets
-└── __tests__/         # Test files
-```
+**Performance Features:**
+- **Server-side rendering** for fast initial loads
+- **Image optimization** with Next.js Image component
+- **Code splitting** for optimal bundle sizes
+- **Edge deployment** for global performance
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Live Demo
 
-### Prerequisites
-- **Node.js** 18+ 
-- **npm** or **yarn** package manager
-- **Git** for version control
+Visit the live website to experience the full portfolio:
 
-### Installation
+**[🌐 vinicius-dev-umber.vercel.app](https://vinicius-dev-umber.vercel.app/)**
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/vinicius-dev/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the result.
-
-### Available Scripts
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Generate test coverage report |
+### What You'll See
+- **Interactive Hero Section** with smooth animations
+- **Bilingual Experience** (English/Portuguese-BR)
+- **Responsive Design** optimized for all devices
+- **Modern UI/UX** with dark theme and micro-interactions
+- **Professional Project Showcase** with detailed descriptions
+- **Contact Information** and social links
 
 ---
 
-## 🧪 Testing
+## 🧪 Quality Assurance
 
-This project includes comprehensive testing with Jest and React Testing Library:
+This portfolio maintains high quality standards through:
 
-```bash
-# Run all tests
-npm test
+**Testing Coverage:**
+- ✅ Component rendering and behavior validation
+- ✅ User interactions and state management testing
+- ✅ Context provider functionality verification
+- ✅ Accessibility compliance (ARIA labels, keyboard navigation)
+- ✅ Cross-browser compatibility testing
+- ✅ Performance optimization validation
 
-# Run tests in watch mode
-npm run test:watch
-
-# Generate coverage report
-npm run test:coverage
-```
-
-**Test Coverage Areas:**
-- Component rendering and behavior
-- User interactions and state changes
-- Context provider functionality
-- Accessibility compliance
-- Local storage persistence
+**Code Quality:**
+- TypeScript for type safety
+- ESLint for code consistency
+- Prettier for code formatting
+- Modern React patterns and best practices
 
 ---
 
@@ -217,25 +166,30 @@ Language preferences are stored in localStorage and persist across sessions.
 
 ## 🚀 Deployment
 
-The project is optimized for deployment on Vercel:
+This portfolio is deployed on **Vercel** for optimal performance and global CDN distribution.
 
-1. **Connect your GitHub repository** to Vercel
-2. **Configure build settings** (automatically detected)
-3. **Deploy** with zero configuration
+The deployment leverages:
+- **Automatic builds** from the main branch
+- **Edge functions** for fast global delivery
+- **Analytics integration** for performance monitoring
+- **Custom domain** with SSL certificate
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vinicius-dev/portfolio)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel)](https://vinicius-dev-umber.vercel.app/)
 
 ---
 
-## 🤝 Contributing
+## 💡 Inspiration
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+This portfolio serves as a demonstration of modern web development practices and can inspire your own projects. While this is a personal portfolio, the codebase showcases:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- **Modern React patterns** with Next.js 14 App Router
+- **TypeScript best practices** for scalable applications
+- **Responsive design principles** with Tailwind CSS
+- **Performance optimization** techniques
+- **Accessibility standards** implementation
+- **Internationalization** strategies
+
+Feel free to explore the code to learn from the implementation!
 
 ---
 
@@ -249,10 +203,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Vinicius Guterres** - Full-Stack Developer
 
-- 🌐 **Portfolio**: [your-portfolio-url.com](https://your-portfolio-url.com)
+- 🌐 **Portfolio**: [vinicius-dev-umber.vercel.app](https://vinicius-dev-umber.vercel.app/)
 - 💼 **LinkedIn**: [linkedin.com/in/vinicius-guterres](https://linkedin.com/in/vinicius-guterres)
 - 🐙 **GitHub**: [github.com/vinicius-dev](https://github.com/vinicius-dev)
-- 📧 **Email**: [your-email@example.com](mailto:your-email@example.com)
+- 📧 **Email**: Available on LinkedIn
 
 ---
 
@@ -268,8 +222,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**⭐ If you found this project helpful, please give it a star! ⭐**
+**⭐ If you like this portfolio, please give it a star! ⭐**
 
-Made with ❤️ by [Vinicius Guterres](https://github.com/vinicius-dev)
+Built with ❤️ by [Vinicius Guterres](https://github.com/vinicius-dev)
 
 </div>
