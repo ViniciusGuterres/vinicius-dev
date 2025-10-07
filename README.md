@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC.svg)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000.svg)](https://vercel.com/)
 
-[🌐 **Live Website**](https://vinicius-dev-umber.vercel.app/) | [💼 **LinkedIn**](https://linkedin.com/in/vinicius-guterres) | [🐙 **GitHub**](https://github.com/vinicius-dev)
+[🌐 **Live Website**](https://vinicius-dev-umber.vercel.app/) | [💼 **LinkedIn**](https://linkedin.com/in/vinicius-guterres)
 
 ---
 
